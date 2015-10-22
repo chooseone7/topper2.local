@@ -1,0 +1,84 @@
+<?php
+/**
+ * Morninftime LatestReviews extension
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ *
+ * @category   Morninftime
+ * @package    Morninftime_LatestReviews
+ * @copyright  Copyright (c) 2009 Morninftime Internet, http://www.morninftime.com
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+?>
+<?php 
+$_items 			= $this->getReviewsCollection(); 
+$listingType 		= Mage::getStoreConfig('latestreviews/products/listing_type');
+$_size				= intval(Mage::getStoreConfig('latestreviews/general/num_displayed_reviews'));
+$_productCollection	= $this->getLoadedProductCollection();
+?>
+<div class="block-title">
+	<strong><span><?php echo $this->__('Lastest Reviews') ?></span></strong>
+</div>
+
+<div class="block-content">
+<?php if(!count($_items)): ?>
+<div class="note-msg">
+    <?php echo $this->__('There are no products matching the selection.') ?>
+</div>
+<?php else: ?>
+<?php $_collectionSize = $_size; ?>
+    <?php //$_columnCount = 3; ?>
+    <ul>
+	<?php $j=0; while ($_review = $_items->fetch()): ?>
+	<?php if($j<3):?>
+	
+	<?php $_product = Mage::getModel('catalog/product')->load($_review['entity_pk_value']); ?>
+        <?php //if($i++%$_columnCount==0): ?>
+         <?php //endif; ?>
+            <li class="item">
+                <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->htmlEscape($this->getImageLabel($_product, 'small_image')) ?>" class="product-image"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(62,79); ?>" width="62" height="79" alt="<?php echo $this->htmlEscape($this->getImageLabel($_product, 'small_image')) ?>" /></a>
+				<div class="product-details">
+					<?php 
+					$storeId = Mage::app()->getStore()->getId();
+					Mage::getModel('review/review')->getEntitySummary($_product, $storeId);
+					?>
+					<?php if ($_product->getRatingSummary()->getReviewsCount()): ?>
+					<div class="ratings">
+						<?php if ($_product->getRatingSummary()->getRatingSummary()):?>
+						<div class="rating-box">
+						<div class="rating" style="width:<?php echo $_product->getRatingSummary()->getRatingSummary() ?>%"></div>
+						</div>
+						<?php endif;?>
+					</div>
+					<?php endif; ?>
+					<h2 class="product-name"><a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->htmlEscape($_product->getName()) ?>"><?php echo $this->htmlEscape($_product->getName()) ?></a></h2>
+					<?php $categories = $_product->getCategoryIds(); ?>
+							<?php if(count($categories)>0):?>
+							  <?php $j=0;foreach($categories as $k => $_category_id): ?>
+								<?php $_category = Mage::getModel('catalog/category')->load($_category_id); ?>
+									<?php if($_category->getName()!="" && $j<1):?>
+										<div class="category-product"><a href="<?php echo $_category->getUrl() ?>"><?php echo $_category->getName() ?></a></div>
+									<?php $j++;endif;?>
+							  <?php endforeach; ?> 
+							<?php endif;?>
+					<div class="review">
+						<?php if(strlen($_review['detail'])< 40) echo '"'.$_review['detail'].'"';
+							else
+								echo '"'.substr($_review['detail'],0,40).'..."';
+						?>
+					</div>
+				</div>
+            </li>
+        <?php //if($i%$_columnCount==0 || $i==$_collectionSize): ?>
+        
+        <?//php endif; ?>
+		<?php $j++;endif; ?>
+    <?php endwhile ?>
+	</ul>
+<?php endif; ?>
+</div>

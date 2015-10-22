@@ -1,0 +1,101 @@
+<?php
+$config = Mage::getStoreConfig('sofiaslider/config');
+$route = Mage::app()->getFrontController()->getRequest()->getRouteName();
+$action = Mage::app()->getFrontController()->getRequest()->getActionName();
+if ( $config['enabled'] ) {
+    $show = true;
+    if ( $config['show'] == 'home' ) {
+        $show = false;
+        $page = Mage::app()->getFrontController()->getRequest()->getRouteName();
+
+        if($page =='cms'){
+            $cmsSingletonIdentifier = Mage::getSingleton('cms/page')->getIdentifier();
+            $homeIdentifier = Mage::app()->getStore()->getConfig('web/default/cms_home_page');
+            if($cmsSingletonIdentifier === $homeIdentifier){
+                $show = true;
+            }
+        }
+    }
+    if ( $show && ($route == 'customer' && ($action == 'login' || $action == 'forgotpassword')) ) {
+        $show = false;
+    }
+    if ( $show ) {
+        ?>
+    <!-- SLIDESHOW -->
+    <div class="slider-container clearfix hide-below-768">
+        <div class="container clearfix">
+            <div class="grid-full">
+                <div class="the-slideshow">
+                    <ul class="slides">
+                        <?php
+                        $slides = $this->getSlides();
+                        foreach($slides as $s) {
+                            $style = $content = '';
+                            if ( !empty($s['slide_width']) ) {
+                                $content = 'style="width:'.$s['slide_width'].'px;"';
+                            }
+                            if ( !empty($s['slide_title_color']) ) {
+                                $slide_title_color = 'style="color:'.$s['slide_title_color'].';"';
+                            }
+                            if ( !empty($s['slide_sub_title_color']) ) {
+                                $slide_sub_title_color = 'style="color:'.$s['slide_sub_title_color'].';"';
+                            }
+                            if ( !empty($s['slide_text_color']) ) {
+                                $slide_text_color = 'style="color:'.$s['slide_text_color'].';"';
+                            }
+                            ?>
+                        <li class="item">
+                            <?php if ( !empty($s['image']) ) : ?>
+                            <img class="sl_image" src="<?php echo Mage::getBaseUrl('media') . $s['image'] ?>" alt="" />
+                            <?php endif; ?>
+                                <div class="caption text-<?php echo $s['slide_align']; ?>" <?php echo $content; ?>>
+                                    <?php if ( !empty($s['slide_title']) ) : ?>
+                                    <h3 <?php echo $slide_title_color; ?>><?php echo $s['slide_title']; ?></h3>
+                                    <?php endif; ?>
+                                    <?php if ( !empty($s['slide_sub_title']) ) : ?>
+                                    <h4 <?php echo $slide_sub_title_color; ?>><?php echo $s['slide_sub_title']; ?></h4>
+                                    <?php endif; ?>
+                                    <?php if ( !empty($s['slide_text']) ) : ?>
+                                    <p <?php echo $slide_text_color; ?>><?php echo nl2br($s['slide_text']); ?></p>
+                                    <?php endif; ?>
+                                    <?php if ( !empty($s['slide_button']) ) : ?>
+                                    <button class="button" <?php echo ( empty($s['slide_link']) ? '' : 'onclick="window.location=\''.$s['slide_link'].'\'"' ); ?>><span><span><?php echo $s['slide_button']; ?></span></span></button>
+                                    <?php endif; ?>
+                                </div>
+                        </li>
+                        <?php
+                        } // foreach($slides as $s) { ?>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+    //<![CDATA[
+		
+		//jQuery(function($) {
+		jQuery(window).load(function(){
+			jQuery('.the-slideshow').flexslider({
+				namespace:			"",
+	            animation: "<?php echo ( in_array($config['animation'], array('slide', 'fade')) ? $config['animation'] : 'slide' ); ?>",
+	            slideshow: <?php echo ( in_array($config['slideshow'], array('true', 'false')) ? $config['slideshow'] : 'true' ); ?>,
+	            useCSS: false,
+	            animationLoop: <?php echo ( in_array($config['animation_loop'], array('true', 'false')) ? $config['animation_loop'] : 'true' ); ?>,
+	            mousewheel: <?php echo ( in_array($config['mousewheel'], array('true', 'false')) ? $config['mousewheel'] : 'false' ); ?>,
+	            smoothHeight: <?php echo ( in_array($config['smoothheight'], array('true', 'false')) ? $config['smoothheight'] : 'false' ); ?>,
+	            slideshowSpeed: <?php echo ( is_numeric($config['slideshow_speed']) ? $config['slideshow_speed'] : 7000 ); ?>,
+	            animationSpeed: <?php echo ( is_numeric($config['animation_speed']) ? $config['animation_speed'] : 600 ); ?>,
+	            pauseOnAction: true,
+	            pauseOnHover: true,
+	            controlNav: false,
+	            directionNav: <?php echo ( in_array($config['direction_nav'], array('true', 'false')) ? $config['direction_nav'] : 'true' ); ?>,
+	            timeline: <?php echo ( in_array($config['timeline'], array('true', 'false')) ? $config['timeline'] : 'true' ); ?>,
+	            height: "<?php echo (is_numeric($config['height']) ? $config['height'] : 'auto' ); ?>"
+				});
+		});
+    //]]>
+    </script>
+    <!-- SLIDESHOW EOF -->
+    <?php } //if ( $show ) { ?>
+<?php } //if ( $config['enabled'] ) { ?>

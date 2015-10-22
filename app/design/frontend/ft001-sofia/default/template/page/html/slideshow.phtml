@@ -1,0 +1,10 @@
+<?php
+$html = $this->getChildHtml();
+?>
+<?php if ($this->countChildren() > 0 && $html != ''): ?>
+	<div class="slideshow-wrapper">
+		<div class="main">
+			<?php echo $this->getChildHtml() ?>
+		</div>
+	</div>
+<?php endif ?>
