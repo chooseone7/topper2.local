@@ -1,0 +1,681 @@
+<?xml version="1.0"?>
+<config>
+	<tabs>
+        <FT translate="label" module="sofiaadmin">
+            <label>FT Extensions</label>
+            <sort_order>200</sort_order>
+        </FT>
+    </tabs>
+    <sections>
+            <sofiaadmin translate="label" module="sofiaadmin">
+            <label>Sofia Admin</label>
+            <tab>FT</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>100</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <images>
+                    <label>Product Images</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>80</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <width translate="label">
+                            <label>Main Product Image Width (px)</label>
+                            <comment>
+                                <![CDATA[Please update cloudzoom big image size if you override dimensions.<br/> If width is not specified, default <strong>width and height</strong> will be used (494 x 494 pixels).  ]]>
+                            </comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </width>
+                        <height translate="label">
+                            <label>Main Product Image Height (px)</label>
+                            <comment>
+                                <![CDATA[If height is not specified width value will be used. If width is not specified, default <strong>width and height</strong> will be used (494 x 494 pixels).]]>
+                            </comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </height>
+                        <keep_ratio translate="label">
+                            <label>Use aspect ratio for all images</label>
+                            <comment>Use main image aspect ration throughout the site</comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>60</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </keep_ratio>
+                    </fields>
+                </images>
+                <cloudzoom>
+                    <label>CloudZoom</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>70</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <enabled translate="label">
+                            <label>Enable Cloud Zoom</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enabled>
+                        <lens_opacity translate="label">
+                            <label>Lens Opacity (%)</label>
+                            <comment>Opacity of the lens pointer.</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </lens_opacity>
+                        <zoom_width translate="label">
+                            <label>Zoom Area Width (px)</label>
+                            <comment>Leave empty to use default.</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </zoom_width>
+                        <zoom_height translate="label">
+                            <label>Zoom Area Height (px)</label>
+                            <comment>Leave empty to use default.</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </zoom_height>
+                        <big_image_width translate="label">
+                            <label>Image Width After Zooming (px)</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>60</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </big_image_width>
+                        <big_image_height translate="label">
+                            <label>Image Height After Zooming (px)</label>
+                            <comment>Leave empty to keep aspect ratio of the image</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>70</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </big_image_height>
+                        <tint_color translate="label">
+                            <label>Tint Color</label>
+                            <comment>Color which will cover the main image. (e.g. #ededed). Does not work with Soft Focus.</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>80</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </tint_color>
+                        <tint_opacity translate="label">
+                            <label>Tint Opacity (%)</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>90</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </tint_opacity>
+                        <soft_focus translate="label">
+                            <label>Soft Focus</label>
+                            <comment>Applies a subtle blur effect to the main image. Does not work with tint.</comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_enabledisable</source_model>
+                            <sort_order>100</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </soft_focus>
+                        <smooth_move translate="label">
+                            <label>Smooth Move</label>
+                            <comment>Amount of smoothness/drift of the zoom image as it moves. The higher the number, the smoother/more drifty the movement will be. 1 = no smoothing.</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>110</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </smooth_move>
+                    </fields>
+                </cloudzoom>
+                <productdetail translate="label">
+                    <label>Product</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>90</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <new_label translate="label">
+                            <label>Show "New" label</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </new_label>
+                        <sale_label translate="label">
+                            <label>Show "Sale" label</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </sale_label>
+                        <enable_upsell translate="label">
+                            <label>Enable Upsell Products</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enable_upsell>
+                        <replace_upsell translate="label">
+                            <label>Replace Upsell Products</label>
+                            <comment><![CDATA[Upsell products can be replaced with static block <b>ft001_product_additional</b>]]></comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>sofiaadmin/config_upsell</source_model>
+                            <sort_order>60</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </replace_upsell>
+                    </fields>
+                </productdetail>
+				<categorygrid translate="label">
+                    <label>Category View (Grid Mode)</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>90</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <numbercols translate="label">
+                            <label>Number of Columns</label>
+							<comment>Number of products displayed in a row in the grid mode.</comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>sofiaadmin/config_numbercols</source_model>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </numbercols>
+                    </fields>
+                </categorygrid>
+            </groups>
+        </sofiaadmin>
+		<sofiadesign translate="label" module="sofiaadmin">
+			<label>Sofia Design</label>
+			<tab>FT</tab>
+			<frontend_type>text</frontend_type>
+			<sort_order>110</sort_order>
+			<show_in_default>1</show_in_default>
+			<show_in_website>1</show_in_website>
+			<show_in_store>1</show_in_store>
+            <groups>
+            	<color_setting translate="label">
+            		<label>Color</label>
+                    <comment><![CDATA[]]></comment>
+					<frontend_type>text</frontend_type>
+					<sort_order>10</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+						<option1_divider translate="label comment">
+							<label>Basic Colors </label>
+							<comment></comment>
+							<frontend_type>hidden</frontend_type>
+							<sort_order>1</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</option1_divider>
+                        <theme_color translate="label comment">
+                            <label>Theme Color </label>
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>sofiaadmin/adminhtml_system_config_form_field_color</frontend_model>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </theme_color>
+						<text_color translate="label comment">
+                            <label>Text Color </label>
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>sofiaadmin/adminhtml_system_config_form_field_color</frontend_model>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </text_color>
+                        <link_color translate="label comment">
+                            <label>Link Color</label>
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>sofiaadmin/adminhtml_system_config_form_field_color</frontend_model>
+                            <sort_order>4</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </link_color>
+                        <link_hover_color translate="label comment">
+                            <label>Link Hover Color</label>
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>sofiaadmin/adminhtml_system_config_form_field_color</frontend_model>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </link_hover_color>
+                        <title_color translate="label comment">
+                            <label>Title Color</label>
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>sofiaadmin/adminhtml_system_config_form_field_color</frontend_model>
+                            <sort_order>6</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </title_color>
+						<option2_divider translate="label comment">
+							<label>Button 1</label>
+							<frontend_type>hidden</frontend_type>
+							<sort_order>7</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</option2_divider>
+                        <button_text_color translate="label comment">
+                            <label>Button Text Color</label>
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>sofiaadmin/adminhtml_system_config_form_field_color</frontend_model>
+                            <sort_order>8</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </button_text_color>
+                         <button_bkg_color translate="label comment">
+                            <label>Button Background Color</label>
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>sofiaadmin/adminhtml_system_config_form_field_color</frontend_model>
+                            <sort_order>9</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </button_bkg_color>
+                        <button_text_hover_color translate="label comment">
+                            <label>Button Hover Text Color</label>
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>sofiaadmin/adminhtml_system_config_form_field_color</frontend_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </button_text_hover_color>
+                        <button_bkg_hover_color translate="label comment">
+                            <label>Button Hover Background Color</label>
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>sofiaadmin/adminhtml_system_config_form_field_color</frontend_model>
+                            <sort_order>11</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </button_bkg_hover_color>
+ 						<option3_divider translate="label comment">
+							<label>Button 2</label>
+							<frontend_type>hidden</frontend_type>
+							<sort_order>12</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</option3_divider>
+                        <button2_text_color translate="label comment">
+                            <label>Button Text Color</label>
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>sofiaadmin/adminhtml_system_config_form_field_color</frontend_model>
+                            <sort_order>13</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </button2_text_color>
+                         <button2_bkg_color translate="label comment">
+                            <label>Button Background Color</label>
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>sofiaadmin/adminhtml_system_config_form_field_color</frontend_model>
+                            <sort_order>14</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </button2_bkg_color>
+                        <button2_text_hover_color translate="label comment">
+                            <label>Button Hover Text Color</label>
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>sofiaadmin/adminhtml_system_config_form_field_color</frontend_model>
+                            <sort_order>15</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </button2_text_hover_color>
+                        <button2_bkg_hover_color translate="label comment">
+                            <label>Button Hover Background Color</label>
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>sofiaadmin/adminhtml_system_config_form_field_color</frontend_model>
+                            <sort_order>16</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </button2_bkg_hover_color>
+					</fields>
+            	</color_setting>
+            	<font_setting translate="label">
+					<label>Font</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>30</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+                        <enable_font translate="label comment">
+							<label>Enable Google Font</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>20</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</enable_font>
+                        <font translate="label comment">
+							<label>Font</label>
+                            <comment>Enable google font to use this option</comment>
+							<frontend_type>select</frontend_type>
+							<frontend_model>sofiaadmin/adminhtml_system_config_form_field_font</frontend_model>
+							<source_model>sofiaadmin/config_font</source_model>
+							<sort_order>30</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</font>
+					</fields>
+				</font_setting>
+                <header>
+                    <label>Header</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>40</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <text_header_color translate="label comment">
+                            <label>Text Color </label>
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>sofiaadmin/adminhtml_system_config_form_field_color</frontend_model>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </text_header_color>
+                        <link_header_color translate="label comment">
+                            <label>Link Color </label>
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>sofiaadmin/adminhtml_system_config_form_field_color</frontend_model>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </link_header_color>
+                        <link_header_hover_color translate="label comment">
+                            <label>Link Hover Color </label>
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>sofiaadmin/adminhtml_system_config_form_field_color</frontend_model>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </link_header_hover_color>
+                        <header_bgk_color>
+                            <label>Header Background Color </label>
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>sofiaadmin/adminhtml_system_config_form_field_color</frontend_model>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </header_bgk_color>                                         
+                    </fields>
+                </header>
+                <quick_access_bar>
+                    <label>Quick Access Bar</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>40</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>            
+                        <text_access_color translate="label comment">
+                            <label>Text Color </label>
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>sofiaadmin/adminhtml_system_config_form_field_color</frontend_model>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </text_access_color>
+                        <link_access_color translate="label comment">
+                            <label>Link Color </label>
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>sofiaadmin/adminhtml_system_config_form_field_color</frontend_model>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </link_access_color>
+                        <link_access_hover_color translate="label comment">
+                            <label>Link Hover Color </label>
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>sofiaadmin/adminhtml_system_config_form_field_color</frontend_model>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </link_access_hover_color>
+                         <quick_access_bk_color>
+                            <label>Background Color </label>
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>sofiaadmin/adminhtml_system_config_form_field_color</frontend_model>
+                            <sort_order>4</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </quick_access_bk_color>
+                     </fields>                                  
+                </quick_access_bar>
+				<navigation translate="label">
+					<label>Navigation</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>50</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+                        <home translate="label">
+                            <label>Home Link in Navigation</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </home>
+                        <text_nav_color translate="label comment">
+                            <label>Default Text Color</label>
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>sofiaadmin/adminhtml_system_config_form_field_color</frontend_model>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </text_nav_color>
+                        <border_nav_color>
+                            <label>Border Color</label>
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>sofiaadmin/adminhtml_system_config_form_field_color</frontend_model>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </border_nav_color>                  
+						<option5_divider translate="label comment">
+							<label>Sub Navigation</label>
+							<comment></comment>
+							<frontend_type>hidden</frontend_type>
+							<sort_order>4</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</option5_divider>
+                       <text_sub_nav_color translate="label comment">
+                            <label>Default Text Color</label>
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>sofiaadmin/adminhtml_system_config_form_field_color</frontend_model>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </text_sub_nav_color>
+                        <column_items translate="label">
+                            <label>Number of items in column</label>
+                            <comment>Define number of items in column for subcategories dropdown</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>6</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </column_items>
+                        <custom_block_width translate="label">
+                            <label>Custom Navigation Block width</label>
+                            <comment><![CDATA[Define custom block width in px]]></comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>7</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </custom_block_width>
+					</fields>
+				</navigation>
+                <subfooter translate="label">
+                    <label>Sub Footer</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>60</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                         <subfooter_bk_color>
+                            <label>Sub Footer Background Color </label>
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>sofiaadmin/adminhtml_system_config_form_field_color</frontend_model>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </subfooter_bk_color>
+                       <subfooter_text_color>
+                            <label>Sub Footer Text Color </label>
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>sofiaadmin/adminhtml_system_config_form_field_color</frontend_model>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </subfooter_text_color>
+                       <subfooter_link_color>
+                            <label>Sub Footer Link Color </label>
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>sofiaadmin/adminhtml_system_config_form_field_color</frontend_model>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </subfooter_link_color>
+                       <subfooter_link_hover_color>
+                            <label>Sub Footer Link Hover Color </label>
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>sofiaadmin/adminhtml_system_config_form_field_color</frontend_model>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </subfooter_link_hover_color>
+                    </fields>
+                </subfooter>
+				<footer translate="label">
+                    <label>Footer</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>70</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                         <footer_bk_color>
+                            <label>Background Color </label>
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>sofiaadmin/adminhtml_system_config_form_field_color</frontend_model>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </footer_bk_color>
+                       <footer_text_color>
+                            <label>Footer Text Color </label>
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>sofiaadmin/adminhtml_system_config_form_field_color</frontend_model>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </footer_text_color>
+                       <footer_link_color>
+                            <label>Footer Link Color </label>
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>sofiaadmin/adminhtml_system_config_form_field_color</frontend_model>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </footer_link_color>
+                       <footer_link_hover_color>
+                            <label>Footer Link Hover Color </label>
+                            <frontend_type>text</frontend_type>
+                            <frontend_model>sofiaadmin/adminhtml_system_config_form_field_color</frontend_model>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </footer_link_hover_color>
+					</fields>
+				</footer>
+			</groups>
+		</sofiadesign>
+    </sections>
+</config> 

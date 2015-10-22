@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <FT_SofiaAdmin>
+            <active>true</active>
+            <codePool>local</codePool>
+        </FT_SofiaAdmin>
+    </modules>
+</config> 

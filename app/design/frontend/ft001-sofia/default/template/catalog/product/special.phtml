@@ -1,0 +1,59 @@
+<?php 
+	$rc2 = rand().rand().time();
+	$helper = $this->helper('sofiaadmin/image');
+    $imgX = 252;
+    $imgY = $helper->calculateHeight($imgX);
+	if (($_products = $this->getProductCollection()) && $_products->getSize()): 
+?>
+<div class="product-carousel" id="product-carousel-<?php echo $rc2; ?>">
+    <h3 class="block-title">
+    		<strong><?php echo $this->title; ?></strong>
+    		<div class="nav-wrapper"></div>
+    </h3>
+    <div class="carousel itemslider itemslider-horizontal itemslider-x count-multi">
+        <ul class="slides products-grid">
+            <?php $i=0; foreach ($_products->getItems() as $_product): $i++; ?>
+                <li class="item">
+                    <?php include('view/labels.phtml')  ?>
+                    <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->htmlEscape($_product->getName()) ?>" class="product-image">
+                        <img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize($imgX, $imgY) ?>" alt="<?php echo $this->htmlEscape($_product->getName()) ?>" />
+                        <?php echo $this->helper('sofiaadmin')->getLabel($_product);  ?>
+                    </a>
+                    <h3 class="product-name"><a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->htmlEscape($_product->getName()) ?>"><?php echo $this->htmlEscape($_product->getName()) ?></a></h3>
+                    <?php echo $this->getPriceHtml($_product, true,$rc2) ?>
+					<div class="actions clearfix">
+					<?php if($_product->isSaleable()): ?>
+						<?php if ( !($_product->getTypeInstance(true)->hasRequiredOptions($_product) || $_product->isGrouped()) ) { ?>
+							<button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="button btn-cart ajax-add" data-url="<?php echo $this->getAddToCartUrl($_product) ?>" data-id="<?php echo $_product->getId()?>"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
+							<span class="loading" id='ajax_loading<?php echo $_product->getId()?>' style='display:none'><img src='<?php echo $this->getSkinUrl('images/icon/loading.gif')?>'/></span>
+						<?php } else { ?>
+							<button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="button btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
+						 <?php }  ?>
+					<?php else: ?>
+					<p class="availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>
+					<?php endif; ?>
+					</div>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+</div>
+<script type="text/javascript">
+//<![CDATA[
+	jQuery(function($) {
+		$('#product-carousel-<?php echo $rc2; ?> .carousel').flexslider({
+			namespace: "",
+			animation: "slide",
+			easing: "easeInQuart",
+		    slideshow: false,
+		    animationLoop: false,
+		    animationSpeed: 300,
+			pauseOnHover: true,
+			controlNav: false,
+			controlsContainer: "#product-carousel-<?php echo $rc2; ?> .nav-wrapper",
+			itemWidth: 188,
+			move: 0		});
+	});
+//]]>
+</script>
+<?php endif; ?>

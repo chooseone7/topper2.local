@@ -1,0 +1,228 @@
+<?xml version="1.0"?>
+<root>
+    <cms>
+        <pages>
+            <item>
+                <title>Sofia Home page - 1 column</title>
+                <identifier>sofia_home_1col</identifier>
+                <content><![CDATA[
+                    <div>
+                        {{block type="catalog/product_list" category_id="13" name="ft.catalog.product.special" alias="product_homepage" title="Featured Products" template="catalog/product/featured.phtml"}}
+                        {{block type="catalog/product_new" name="ft.catalog.product.new" alias="product_homepage" title="New Products" template="catalog/product/special.phtml"}}
+                    </div>
+                ]]></content>
+                <is_active>1</is_active>
+                <sort_order>0</sort_order>
+                <stores>
+                    <item>0</item>
+                </stores>
+                <root_template>one_column</root_template>
+            </item>
+        </pages>
+        <blocks>
+            <item>
+                <title>ft001-bottom-sp-4</title>
+                <identifier>ft001-bottom-sp-4</identifier>
+                <content><![CDATA[
+                <div class="sl-block">
+					<h3>BUSSINES INFO</h3>
+					<div class="sl-block-content">
+						<ul>
+							<li><a href="#">International Contact</a></li>
+							<li><a href="#">Business Services</a></li>
+							<li><a href="#">Our Business</a></li>
+							<li><a href="#">Business Segments</a></li>
+							<li><a href="#">Where We Operate</a></li>
+						</ul>
+					</div>
+				</div>
+                ]]></content>
+                <is_active>1</is_active>
+                <stores>
+                    <item>0</item>
+                </stores>
+            </item>
+            <item>
+                <title>ft001-bottom-sp-1</title>
+                <identifier>ft001-bottom-sp-1</identifier>
+                <content><![CDATA[
+					<div class="sl-block">
+						<h3>About Us</h3>
+						<div class="sl-block-content">
+						   <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Maecenas accumsan pellentesque neque</p>
+						   <p>Cras fringilla porttitor neque. Ut hendrerit</p>
+						</div>
+					</div>
+                ]]></content>
+                <is_active>1</is_active>
+                <stores>
+                    <item>0</item>
+                </stores>
+            </item>
+            <item>
+                <title>ft001-bottom-sp-2</title>
+                <identifier>ft001-bottom-sp-2</identifier>
+                <content><![CDATA[
+					<div class="sl-block location">
+						<h3>Store Location</h3>
+						<div class="sl-block-content">
+							<p class="welcome-text">Feel free to contact us if you have any problems.</p>
+							<ul class="address">
+								<li><span>Address</span> : 242 NTB Street, NY, US</li>
+								<li><span>Email</span> : ft-themes@mail.com</li>
+								<li><span>Address</span> : 242 NTB Street, NY, US</li>
+								<li><span>Phone</span> : 01668775667</li>
+							</ul>
+						</div>
+					</div>
+                ]]></content>
+                <is_active>1</is_active>
+                <stores>
+                    <item>0</item>
+                </stores>
+            </item>
+            <item>
+                <title>ft001-bottom-sp-3</title>
+                <identifier>ft001-bottom-sp-3</identifier>
+                <content><![CDATA[
+					<div class="sl-block">
+						<h3>Customer Services</h3>
+							<div class="sl-block-content">
+								<ul>
+									<li><a href="#">Check Order Status</a></li>
+									<li><a href="#">Shipping Options</a></li>
+									<li><a href="#">Returns and Exchanges</a></li>
+									<li><a href="#">Product Recall</a></li>
+									<li><a href="#">Live chat support</a></li>
+								</ul>
+							</div>
+					</div>
+                ]]></content>
+                <is_active>1</is_active>
+                <stores>
+                    <item>0</item>
+                </stores>
+            </item>
+            <item>
+                <title>ft001-bf-bottom-sp-2</title>
+                <identifier>ft001-bf-bottom-sp-2</identifier>
+                <content><![CDATA[
+					<div class="social-block">
+					   <h4>Connect Us</h4>
+					   <div class="social_links_area"><a class="social_links facebook_account" href="#">facebook_account</a> <a class="social_links twitter_account" href="#">twitter_account</a> <a class="social_links email_to" href="#">email_to</a> <a class="social_links youtube_account" href="#">youtube_account</a> <a class="social_links pinterest_account" href="#">pinterest_account</a></div>
+					</div>
+                ]]></content>
+                <is_active>1</is_active>
+                <stores>
+                    <item>0</item>
+                </stores>
+            </item>
+            <item>
+                <title>ft001_product_additional</title>
+                <identifier>ft001_product_additional</identifier>
+                <content><![CDATA[
+					<div class="block block-product-additional">
+					    <div class="block-title"><strong><span>Lorem Ipsumimum Dolor Sit</span></strong></div>
+					    <div class="block-content">
+					        <p>Lorem ipsum dolor sit amen, dolor imun ra adlip ulissys lorem ipsum dolor sit amen</p>
+					        <img src="{{skin url='images/sample_banner.jpg'}}" alt="" />
+					    </div>
+					</div>
+                ]]></content>
+                <is_active>1</is_active>
+                <stores>
+                    <item>0</item>
+                </stores>
+            </item>
+            <item>
+                <title>ft001_product_addthis</title>
+                <identifier>ft001_product_addthis</identifier>
+                <content><![CDATA[
+					<!-- AddThis Button BEGIN -->
+					<div class="addthis_toolbox addthis_default_style ">
+					<a class="addthis_button_preferred_1"></a>
+					<a class="addthis_button_preferred_2"></a>
+					<a class="addthis_button_preferred_3"></a>
+					<a class="addthis_button_preferred_4"></a>
+					<a class="addthis_button_compact"></a>
+					<a class="addthis_counter addthis_bubble_style"></a>
+					</div>
+					<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4f574ddc5bcdccbc"></script>
+					<!-- AddThis Button END -->
+                ]]></content>
+                <is_active>1</is_active>
+                <stores>
+                    <item>0</item>
+                </stores>
+            </item>
+            <item>
+                <title>ft001_after_tabs</title>
+                <identifier>ft001_after_tabs</identifier>
+                <content><![CDATA[
+                    <div class="static-block">This is a HTML block; you can create it via admin panel. There are many blocks like this on site. They are created especially to set to everybody&rsquo;s preferences. If you have any questions please make a request via our contact form, <strong>block identifier: ft001_after_tabs</strong></div>
+                ]]></content>
+                <is_active>1</is_active>
+                <stores>
+                    <item>0</item>
+                </stores>
+            </item>
+            <item>
+                <title>Custom Menu</title>
+                <identifier>ft001_navigation_block</identifier>
+                <content><![CDATA[
+					<div class="container">
+					<div class="grid12-4"><img src="{{skin url='images/sample_banner.jpg'}}" alt="Image Example" />
+					<h5 class="heading">Sed ut perspiciatis</h5>
+					<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritati</p>
+					<a href="#">More details</a></div>
+					<div class="grid12-4"><img src="{{skin url='images/sample_banner1.jpg'}}" alt="Image Example" />
+					<h5 class="heading">Sed ut perspiciatis</h5>
+					<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritati</p>
+					<a href="#">More details</a></div>
+					<div class="grid12-4"><img src="{{skin url='images/sample_banner2.jpg'}}" alt="Image Example" />
+					<h5 class="heading">Sed ut perspiciatis</h5>
+					<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritati</p>
+					<a href="#">More details</a></div>
+					</div>
+             ]]></content>
+                <is_active>1</is_active>
+                <stores>
+                    <item>0</item>
+                </stores>
+            </item>
+            <item>
+                <title>Custom Tab</title>
+                <identifier>ft001_custom_tab</identifier>
+                <content><![CDATA[
+                    <p><strong>block identifier: ft001_custom_tab</strong><span>&nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</span></p>
+                ]]></content>
+                <is_active>1</is_active>
+                <stores>
+                    <item>0</item>
+                </stores>
+            </item>
+            <item>
+                <title>ft001_after_category</title>
+                <identifier>ft001_after_category</identifier>
+                <content><![CDATA[
+                    <div class="static-block">This is a HTML block; you can create it via admin panel. There are many blocks like this on site. They are created especially to set to everybody&rsquo;s preferences. If you have any questions please make a request via our contact form, <strong>block identifier: ft001_after_category</strong></div>
+                ]]></content>
+                <is_active>1</is_active>
+                <stores>
+                    <item>0</item>
+                </stores>
+            </item>
+            <item>
+                <title>ft001_before_category</title>
+                <identifier>ft001_before_category</identifier>
+                <content><![CDATA[
+                    <div class="static-block">This is a HTML block; you can create it via admin panel. There are many blocks like this on site. They are created especially to set to everybody&rsquo;s preferences. If you have any questions please make a request via our contact form, <strong>block identifier: ft001_before_category</strong></div>
+                ]]></content>
+                <is_active>1</is_active>
+                <stores>
+                    <item>0</item>
+                </stores>
+            </item>
+        </blocks>
+    </cms>
+</root>
